@@ -4,23 +4,15 @@ function Swap(){
     const item6Img = document.querySelector('.item6 img');
 
     if(item2Img && item6Img){
+
         const tempSrc = item2Img.src;
         const tempAlt = item2Img.alt;
 
-        const tempSrc6 = item6Img.src;
-        const tempAlt6 = item6Img.alt;
-        const tempUsemap6 = item6Img.getAttribute('usemap');
-
-        item2Img.src = tempSrc6;
-        item2Img.alt = tempAlt6;
+        item2Img.src = item6Img.src;
+        item2Img.alt = item6Img.alt;
 
         item6Img.src = tempSrc;
         item6Img.alt = tempAlt;
-
-        if(tempUsemap6){
-            item2Img.setAttribute('usemap', tempUsemap6);
-            item6Img.removeAttribute('usemap');
-        }
    }
 }
 
